@@ -18,7 +18,7 @@ It is a fully functional, responsive website built for an NGO that empowers rura
 - **Team Page** – Detailed profiles of board members and staff, with expandable modals for full bios, education, and expertise.
 - **News & Stories (whasnew.php)** – Full grid of all published posts, each with a media carousel (images/videos), category badges, share buttons, and "Read Full Story" links.
 - **Single Post (post.php)** – Dedicated page for each news/story with full content, gallery, and social share buttons.
-- **Donate Page** – Clear call‑to‑action with M‑Pesa Paybill (522533 / 8099396) and bank transfer details, plus impact statements to encourage giving.
+- **Donate Page** 
 - **Contact Section** – Integrated contact form and organisation details (phone, email, address).
 
 ### 🔹 Admin Dashboard (Role‑Based)
