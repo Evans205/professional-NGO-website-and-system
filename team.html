@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Our Team | Grow Africa Futures</title>
+    <meta name="description" content="Meet the expert board and team driving rural transformation across Africa. Empowering young agripreneurs through innovation, agribusiness, and sustainable systems.">
+    <meta name="keywords" content="Grow Africa Futures, agribusiness team, Kenya, rural development, young entrepreneurs, board members">
+    <meta name="author" content="Grow Africa Futures">
+    
+    <!-- Tailwind CSS + Font Awesome + Google Fonts (matching main site) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background-color: #fefcf5; overflow-x: hidden; }
+        /* Team card styles */
+        .team-card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid #e9e6da;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 32px rgba(0,0,0,0.1);
+        }
+        .card-img {
+            text-align: center;
+            padding: 2rem 1rem 1rem;
+            background: #fbf7ef;
+        }
+        .card-img img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #e1d5b6;
+            background: #f0ede3;
+        }
+        .placeholder-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: #d9d0b5;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #7c6e4e;
+            border: 4px solid #e1d5b6;
+        }
+        .card-info {
+            padding: 1.2rem 1.5rem 1.8rem;
+        }
+        .card-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: #2d3e2a;
+        }
+        .role {
+            font-weight: 600;
+            color: #f4a261;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+        .short-bio {
+            font-size: 0.9rem;
+            color: #3d4a36;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        .read-more-btn {
+            background: none;
+            border: 1.5px solid #2b6e3c;
+            color: #2b6e3c;
+            padding: 0.45rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: fit-content;
+        }
+        .read-more-btn:hover {
+            background: #2b6e3c;
+            color: white;
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+        .modal-content {
+            background: white;
+            max-width: 600px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            border-radius: 28px;
+            padding: 1.8rem;
+            position: relative;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.3s ease;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #8a7a5c;
+            transition: color 0.2s;
+        }
+        .close-modal:hover { color: #2b6e3c; }
+        .modal h2 { font-size: 1.8rem; margin-bottom: 0.25rem; color: #2d3e2a; }
+        .modal-role { color: #f4a261; font-weight: 600; margin-bottom: 1rem; }
+        .modal-section { margin: 1rem 0; }
+        .modal-section h4 { font-size: 1.1rem; font-weight: 600; color: #2b6e3c; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .donate-note {
+            background: #e9f5e6;
+            padding: 0.8rem;
+            border-radius: 16px;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        /* Page header & background */
+        .team-page-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2b6e3c, #f4a261);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .page-header p {
+            font-size: 1.2rem;
+            color: #4a5b3e;
+            max-width: 700px;
+            margin: 0.8rem auto 0;
+        }
+        .mission {
+            background: #e9f5e6;
+            padding: 0.6rem 1.5rem;
+            border-radius: 60px;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #1e4a2f;
+        }
+        .bg-soft-leaf {
+            background: linear-gradient(120deg, #f8f4ea 0%, #f0ede3 100%);
+        }
+        @media (max-width: 680px) {
+            .team-grid { gap: 1.2rem; }
+            .card-info { padding: 1rem; }
+            .page-header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ==================== NAVBAR (matches main site, with correct links) ==================== -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <div class="container mx-auto px-5 lg:px-8 py-3 flex flex-wrap items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="./images/logo.png" alt="Grow Africa Futures Logo" class="h-12 w-auto object-contain" onerror="this.src='https://placehold.co/400x200?text=Grow+Africa+Futures'">
+                <span class="font-bold text-2xl tracking-tight text-gray-800">Grow Africa<span class="text-amber-700"> Futures</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="index.html" class="hover:text-amber-700 transition">Home</a>
+                <a href="about.html" class="hover:text-amber-700 transition">About</a>
+                <a href="index.html#focus" class="hover:text-amber-700 transition">Our Focus</a>
+                <a href="team.html" class="text-amber-700 font-semibold">Team</a>
+                <a href="index.html#contact" class="hover:text-amber-700 transition">Contact</a>
+            </div>
+            <div class="flex md:hidden">
+                <button id="mobile-menu-btn" class="text-2xl text-gray-700 focus:outline-none"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <!-- mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white px-5 pb-4 flex flex-col space-y-3 text-gray-700 font-medium border-t">
+            <a href="index.html" class="py-2 hover:text-amber-700">Home</a>
+            <a href="about.html" class="py-2 hover:text-amber-700">About</a>
+            <a href="index.html#focus" class="py-2 hover:text-amber-700">Our Focus</a>
+            <a href="team.html" class="py-2 text-amber-700 font-semibold">Team</a>
+            <a href="index.html#contact" class="py-2 hover:text-amber-700">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ==================== TEAM PAGE MAIN CONTENT ==================== -->
+    <div class="team-page-container">
+        <div class="page-header">
+            <h1>🌱 Meet the Board & Team</h1>
+            <p>Visionary leaders, technical experts, and youth advocates accelerating agribusiness transformation.</p>
+            <div class="mission">
+                <i class="fas fa-seedling"></i> We catalyze rural transformation in Africa by empowering young entrepreneurs in agribusiness, addressing sector challenges, and unlocking untapped potential for sustainable economic growth.
+            </div>
+        </div>
+        <div class="team-grid" id="teamGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;"></div>
+    </div>
+
+    <!-- Modal for member details -->
+    <div id="memberModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalDynamicContent"></div>
+        </div>
+    </div>
+
+    <!-- ==================== UNIFIED FOOTER (matches main site) ==================== -->
+    <footer class="bg-gray-900 text-gray-300 mt-16">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="./images/logo.png" alt="Grow Africa Futures" class="h-10 w-auto" onerror="this.src='https://placehold.co/200x200?text=GAF'">
+                        <span class="font-bold text-xl text-white">Grow Africa<span class="text-amber-400"> Futures</span></span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed">Empowering communities through sustainable agriculture, innovation, and inclusive economic growth.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-amber-400 transition">About Us</a></li>
+                        <li><a href="index.html#focus" class="hover:text-amber-400 transition">Our Focus</a></li>
+                        <li><a href="team.html" class="hover:text-amber-400 transition">Team</a></li>
+                        <li><a href="donate.html" class="hover:text-amber-400 transition">Donate</a></li>
+                        <li><a href="index.html#contact" class="hover:text-amber-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">Get In Touch</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-amber-400 mt-1"></i> P.O Box 67509, 00200, Nairobi, Kenya</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-phone-alt text-amber-400"></i> +254700536808</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope text-amber-400"></i> info@growafricafutures.org</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">Follow Us</h4>
+                    <div class="flex gap-4 mb-5">
+                        <a href="#" class="bg-gray-800 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="bg-gray-800 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="bg-gray-800 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="bg-gray-800 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <p class="text-sm text-gray-400">Join our mission — partner with us to transform African agriculture.</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500">
+                © 2025 Grow Africa Futures — Cultivating Prosperity, Growing Futures. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ==================== ENHANCED TEAM DATA (Fred & Benjamin updated) ====================
+        const teamMembers = [
+            { 
+                name: "Benard Okengo Minyonga", 
+                role: "Chairperson", 
+                shortBio: "Environmental health & WASH specialist with 25+ years in public health. Leads governance and strategic oversight.", 
+                imgFile: "bernard.jpeg", 
+                fullDetails: { 
+                    education: "BSc Environmental Health Sciences (Moi University); Higher National Diploma Health Education & Promotion (KMTC); Diploma Environmental Health Sciences (KMTC).", 
+                    experience: "Sub-County Health Promotion Officer (Langata). Previously at Kamiti Prison, Kakamega Provincial Hospital, and community level. Seconded to ADEO for multi-sectoral cholera prevention in Kajiado. Certified CLTS trainer.", 
+                    certifications: "CLTS, incinerator construction, injection safety TOT, disability mainstreaming, CHEW, exclusive breastfeeding, ITN malaria control.", 
+                    expertise: "Community Led Total Sanitation (CLTS), disease surveillance, food/water safety, health promotion, waste management, public health law enforcement." 
+                } 
+            },
+            { 
+                name: "Fred Wambua", 
+                role: "Founder & Vice Chairperson / Agri-Enterprise Development Officer", 
+                shortBio: "Results-driven Agri-Enterprise Development Officer with strong background in agricultural economics, climate-smart farming, and enterprise management.", 
+                imgFile: "user-icon.png", 
+                fullDetails: { 
+                    education: "BSc Agricultural Economics and Resource Management – Moi University (Second Class Honours, Upper Division). KCSE B+ (70/100 points).",
+                    experience: "Founder & Vice Chairperson, Grow Africa Futures (2024–Present). County Implementation Officer, Africa Harvest – trained youth groups on GAPs, climate-smart ag, and value addition. Creative Director, Greencare Association – designed community training on tree nurseries and fruit orchards. Field Agent, Crop Nutrition Lab – trained farmers on soil fertility management. Technical Agronomist, Zelena Grow Ltd – advised on agronomic practices. Trainer of Trainees, ADRA – climate-smart agriculture. Intern, KALRO – maize improvement & dryland farming research.",
+                    certifications: "Soil health management, data collection (ODK/CAPI), digital agriculture tools, financial literacy training, VSLA methodologies, M&E, organic farming.",
+                    expertise: "Agribusiness development, climate-smart agriculture, poultry production, value chain development, market linkages, enterprise planning, group mobilization, project implementation, monitoring & evaluation, agri-marketing, post-harvest management." 
+                } 
+            },
+            { 
+                name: "Dr. Scolastica Wambua", 
+                role: "Board Director, Marketing and Communications", 
+                shortBio: "Agribusiness & gender expert, head of socio-economics at KALRO. Drives market linkages, brand strategy, and inclusive value chains.", 
+                imgFile: "scolastica.jpeg", 
+                fullDetails: { 
+                    education: "PhD in Agribusiness Management (Kenyatta University); MSc Agribusiness Management & Trade (Kenyatta University); Higher Diploma HRM; BSc Agribusiness Management (Egerton University).", 
+                    experience: "Head of Socio-Economics & Business Management, Coffee Research Institute (KALRO). 15+ years in value chain development, gender mainstreaming. John Dillon Fellow (Australia), AWARD Fellow.", 
+                    certifications: "Gender Researchers Leadership (CGIAR), Rural Entrepreneurship (Netherlands), ISO 9001, Qualitative/Quantitative analysis.", 
+                    expertise: "Value chain analysis, gender-responsive agribusiness, policy development, market systems, monitoring & evaluation." 
+                } 
+            },
+            { 
+                name: "Prof. Josphert N. Kimatu", 
+                role: "Board Director, Fundraising and Partnerships", 
+                shortBio: "Molecular plant epigenetics expert, post-harvest specialist. Mobilises resources and builds strategic alliances.", 
+                imgFile: "josphert.jpeg", 
+                fullDetails: { 
+                    education: "PhD Molecular Plant Epigenetics (Northeast Normal University, China); MPhil Forest Pathology (Moi University).", 
+                    experience: "Associate Professor & Director Wote Campus, SEKU. Director of Research, Innovation & Technology (2014-2019). Published 100+ papers.", 
+                    certifications: "NEMA EIA expert, EU Legal Entity Appointed Representative.", 
+                    expertise: "Climate-resilient crops, post-harvest management, aflatoxin mitigation, FMNR, epigenetics, grant writing." 
+                } 
+            },
+            { 
+                name: "Dr. Atei Kerochi", 
+                role: "Board Director, Programs and Strategy", 
+                shortBio: "Public health specialist & epidemiologist. Designs strategic programmes linking nutrition, WASH, and agribusiness.", 
+                imgFile: "user-icon.png", 
+                fullDetails: { 
+                    education: "Master of Public Health (University of Liverpool); Fellowship Community Medicine (Sudan Medical Board); MBChB (University of Nairobi).", 
+                    experience: "Lecturer at Mount Kenya University. Former Senior Public Health Officer (UNHCR South Sudan), Health & Nutrition Coordinator (UNHCR Eastern Sudan).", 
+                    certifications: "Vaccine cold chain management, CLTS, M&E for health programs.", 
+                    expertise: "Epidemiology, strategic planning, M&E, humanitarian health, nutrition security, health systems strengthening." 
+                } 
+            },
+            { 
+                name: "Benjamin Ombasa", 
+                role: "Treasurer", 
+                shortBio: "Finance & accounting scholar, university administrator, and governance professional. Brings 15+ years in financial management and cooperative leadership.", 
+                imgFile: "ombasa.jpeg", 
+                fullDetails: { 
+                    education: "Senior Lecturer in Finance and Accounting at Maasai Mara University. Extensive expertise in teaching, curriculum development, examinations management, financial analysis, research, and institutional governance.", 
+                    experience: "Permanent employee at Maasai Mara University since 2014. Currently serves as Chairman of the Supervisory Committee of Maasai Mara University SACCO, providing strategic oversight and governance leadership. Over 15 years in higher education finance, cooperative governance, and academic leadership.", 
+                    certifications: "Financial management, governance training, cooperative leadership, higher education administration.", 
+                    expertise: "Financial analysis, budgeting, institutional governance, examinations administration, cooperative governance, resource mobilization, transparency, and donor fund accountability." 
+                } 
+            },
+            { 
+                name: "Angela Bosibori Edward", 
+                role: "Founder & Secretary of the Board", 
+                shortBio: "Agribusiness economist, founder of Grow Africa Futures. Passionate about youth-led agri-enterprises.", 
+                imgFile: "angela.jpeg", 
+                fullDetails: { 
+                    education: "MSc in Agricultural Economics & Natural Resource Management (ongoing, Maasai Mara University); BSc Agribusiness Management (Egerton University).", 
+                    experience: "Poultry Farm Manager (Angie's Poultry Farm). Research Assistant at CIAT. Part-time Lecturer at Maasai Mara University.", 
+                    certifications: "Computer Applications, Scientific Communication & Publishing.", 
+                    expertise: "Agribusiness value chains, market research, FMCG distribution, M&E, youth engagement, NGO leadership." 
+                } 
+            },
+            { 
+                name: "Evans M. Nzomo", 
+                role: "Web and Systems Support Lead", 
+                shortBio: "Computer Science graduate and systems developer experienced in web applications, IT infrastructure, and secure digital systems.", 
+                imgFile: "Evans.jpg", 
+                fullDetails: { 
+                    education: "BSc in Computer Science, South Eastern Kenya University. Certifications: Data Analysis, Software Development with AI, Cyber Security & AI.", 
+                    experience: "Industrial attachment at Kenya Power & Lighting Company. Software Engineering attachment at County Government of Makueni. Freelance full‑stack developer.", 
+                    certifications: "ICT Authority Cyber Security, Artificial Intelligence Course, Data Analytics, FMNR Advanced Course.", 
+                    expertise: "Full‑stack (Laravel, Flask, PHP, MySQL, React), network configuration, cybersecurity, machine learning." 
+                } 
+            },
+            { 
+                name: "Victor Mumo Kyeva", 
+                role: "Innovation Lead", 
+                shortBio: "Student leader and Chairperson of SEKU Innovation & Incubation Club. Generates youth-driven ideas and builds tech solutions.", 
+                imgFile: "user-icon.png", 
+                fullDetails: { 
+                    education: "Bachelor of Education Science (South Eastern Kenya University, 2025). Self-taught full-stack developer.", 
+                    experience: "Founder of ElimuTech Kenya Ltd and InovaRoute Tech Ltd. Built ElimuLink, InovaMap, FaidaFarm. Chairperson – SEKU Innovation Club.", 
+                    certifications: "Leadership in innovation clubs, product design.", 
+                    expertise: "React, FastAPI, PostgreSQL, system design, AI integration, youth ideation facilitation." 
+                } 
+            }
+        ];
+
+        // Helper for image HTML with fallback
+        function getImageHtml(member) {
+            if (member.imgFile) {
+                return `<img src="images/${member.imgFile}" alt="${member.name}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'placeholder-img\'><i class=\'fas fa-user-circle\'></i></div>';">`;
+            } else {
+                return `<div class="placeholder-img"><i class="fas fa-user-circle"></i></div>`;
+            }
+        }
+
+        // Render team cards
+        const gridContainer = document.getElementById('teamGrid');
+        const modal = document.getElementById('memberModal');
+        const modalContentDiv = document.getElementById('modalDynamicContent');
+        const closeModalSpan = document.querySelector('.close-modal');
+
+        function openModal(member) {
+            const d = member.fullDetails;
+            modalContentDiv.innerHTML = `
+                <h2>${member.name}</h2>
+                <div class="modal-role">${member.role}</div>
+                <div class="modal-section"><h4><i class="fas fa-graduation-cap"></i> Education</h4><p>${d.education || 'Information coming soon.'}</p></div>
+                <div class="modal-section"><h4><i class="fas fa-briefcase"></i> Key Experience</h4><p>${d.experience || 'To be updated.'}</p></div>
+                <div class="modal-section"><h4><i class="fas fa-certificate"></i> Certifications & Skills</h4><p>${d.certifications || 'See expertise section'}</p></div>
+                <div class="modal-section"><h4><i class="fas fa-microchip"></i> Core Expertise</h4><p>${d.expertise || 'Not specified'}</p></div>
+                <div class="donate-note"><i class="fas fa-heart" style="color:#f4a261;"></i> These experts drive real change. <strong>Support Grow Africa Futures</strong> – your donation empowers young agripreneurs and rural communities.</div>
+            `;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() { modal.style.display = 'none'; }
+
+        teamMembers.forEach(member => {
+            const card = document.createElement('div');
+            card.className = 'team-card';
+            const imgDiv = document.createElement('div');
+            imgDiv.className = 'card-img';
+            imgDiv.innerHTML = getImageHtml(member);
+            const infoDiv = document.createElement('div');
+            infoDiv.className = 'card-info';
+            const nameHeading = document.createElement('h3');
+            nameHeading.textContent = member.name;
+            const roleSpan = document.createElement('div');
+            roleSpan.className = 'role';
+            roleSpan.textContent = member.role;
+            const shortBioP = document.createElement('p');
+            shortBioP.className = 'short-bio';
+            shortBioP.textContent = member.shortBio;
+            const readBtn = document.createElement('button');
+            readBtn.className = 'read-more-btn';
+            readBtn.textContent = 'Read more';
+            readBtn.addEventListener('click', () => openModal(member));
+            infoDiv.appendChild(nameHeading);
+            infoDiv.appendChild(roleSpan);
+            infoDiv.appendChild(shortBioP);
+            infoDiv.appendChild(readBtn);
+            card.appendChild(imgDiv);
+            card.appendChild(infoDiv);
+            gridContainer.appendChild(card);
+        });
+
+        closeModalSpan.addEventListener('click', closeModal);
+        window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        modal.addEventListener('wheel', (e) => e.stopPropagation());
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Donate | Grow Africa Futures</title>
+  <meta name="description" content="Your donation builds stronger farmers, families, and a stronger Africa. Support youth agribusiness, farmer training, and community transformation.">
+  <!-- Tailwind CSS + Font Awesome + Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body { background-color: #fefcf5; overflow-x: hidden; }
+    .btn-donate-nav { background: #e67e22; transition: all 0.2s; }
+    .btn-donate-nav:hover { background: #d35400; transform: scale(1.05); box-shadow: 0 4px 12px rgba(230, 126, 34, 0.4); }
+    .donate-card { border-radius: 1.5rem; transition: all 0.2s; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- ==================== NAVBAR (same as main site) ==================== -->
+  <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <div class="container mx-auto px-5 lg:px-8 py-3 flex flex-wrap items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="./images/logo.png" alt="Grow Africa Futures Logo" class="h-12 w-auto object-contain" onerror="this.src='https://placehold.co/400x200?text=Grow+Africa+Futures'">
+        <span class="font-bold text-2xl tracking-tight text-gray-800">Grow Africa<span class="text-amber-700"> Futures</span></span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-amber-700 transition">Home</a>
+        <a href="about.html" class="hover:text-amber-700 transition">About</a>
+        <a href="index.html#focus" class="hover:text-amber-700 transition">Our Focus</a>
+        <a href="team.html" class="hover:text-amber-700 transition">Team</a>
+        <a href="index.html#contact" class="hover:text-amber-700 transition">Contact</a>
+        <a href="donate.html" class="btn-donate-nav text-white px-5 py-2 rounded-full font-semibold shadow-md"><i class="fas fa-heart mr-2"></i>Donate</a>
+      </div>
+      <div class="flex md:hidden items-center gap-3">
+        <a href="donate.html" class="btn-donate-nav text-white px-4 py-1.5 rounded-full text-sm font-semibold"><i class="fas fa-heart mr-1"></i>Donate</a>
+        <button id="mobile-menu-btn" class="text-2xl text-gray-700 focus:outline-none"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-5 pb-4 flex flex-col space-y-3 text-gray-700 font-medium border-t">
+      <a href="index.html" class="py-2 hover:text-amber-700">Home</a>
+      <a href="about.html" class="py-2 hover:text-amber-700">About</a>
+      <a href="index.html#focus" class="py-2 hover:text-amber-700">Our Focus</a>
+      <a href="team.html" class="py-2 hover:text-amber-700">Team</a>
+      <a href="index.html#contact" class="py-2 hover:text-amber-700">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section: Reason for donation -->
+    <section class="relative bg-gradient-to-r from-green-800 to-green-600 text-white py-24">
+      <div class="absolute inset-0 bg-black/30"></div>
+      <div class="relative container mx-auto px-6 text-center">
+        <i class="fas fa-hand-holding-heart text-5xl text-amber-300 mb-5"></i>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Every Donation Builds a Stronger Africa</h1>
+        <p class="text-xl max-w-3xl mx-auto mt-5 opacity-95">Your support gives a farmer training, a family food security, and a young person a business – not just survival.</p>
+        <div class="mt-10">
+          <a href="#donation-instructions" class="inline-block bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-4 px-10 rounded-full text-lg transition shadow-xl"><i class="fas fa-heart mr-2"></i> Donate Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple impact statement -->
+    <section class="py-12 bg-white reveal">
+      <div class="container mx-auto px-6 max-w-4xl text-center">
+        <p class="text-gray-700 text-lg md:text-xl">Across rural Kenya, thousands of farmers and young people have potential but lack access to training, inputs, and markets. <strong class="text-green-700">Grow Africa Futures</strong> changes that – but we cannot do it alone. Your gift today unlocks opportunity, dignity, and lasting prosperity.</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-check-circle"></i> 100% goes to programs</span>
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-chart-line"></i> Audited annually</span>
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-file-alt"></i> NGO registered & compliant</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donation Instructions Section (revealed after click or visible) -->
+    <section id="donation-instructions" class="py-16 bg-soft-leaf reveal">
+      <div class="container mx-auto px-6 max-w-3xl">
+        <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 text-center">
+          <i class="fas fa-mobile-alt text-4xl text-amber-600 mb-3"></i>
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800">How to Donate</h2>
+          <p class="text-gray-600 mt-2">Choose the easiest way for you. Your donation makes a real difference.</p>
+          
+          <div class="mt-8 text-left space-y-6">
+            <!-- M-Pesa Paybill -->
+            <div class="border-l-4 border-amber-500 pl-5 py-2">
+              <h3 class="font-bold text-xl flex items-center gap-2"><i class="fas fa-mobile-alt text-amber-600"></i> M-Pesa (Paybill)</h3>
+              <p class="text-gray-700 mt-1">Go to M-Pesa menu, select <strong>Lipa na M-Pesa</strong> → <strong>Paybill</strong></p>
+              <div class="bg-gray-100 rounded-lg p-3 mt-2 font-mono">
+                <p><span class="font-semibold">Business Number:</span> <span class="text-green-700 text-lg">522533</span></p>
+                <p><span class="font-semibold">Account Number:</span> <span class="text-green-700 text-lg">8099396</span></p>
+              </div>
+              <p class="text-sm text-gray-500 mt-1">Enter your name or "Donation" as reference.</p>
+            </div>
+            
+            <!-- Bank Transfer (KCB) -->
+            <div class="border-l-4 border-amber-500 pl-5 py-2">
+              <h3 class="font-bold text-xl flex items-center gap-2"><i class="fas fa-university text-amber-600"></i> Bank Transfer (KCB)</h3>
+              <div class="bg-gray-100 rounded-lg p-3 mt-2 space-y-1 font-mono">
+                <p><span class="font-semibold">Bank:</span> Kenya Commercial Bank (KCB)</p>
+                <p><span class="font-semibold">Account Name:</span> Grow Africa Futures</p>
+                <p><span class="font-semibold">Paybill Number:</span> 522533</p>
+                <p><span class="font-semibold">Account Number:</span> 8099396</p>
+              </div>
+              <p class="text-sm text-gray-500 mt-1">For direct bank deposit, use the same Paybill and account number via your banking app or branch.</p>
+            </div>
+            
+            <!-- Contact for assistance -->
+            <div class="bg-amber-50 rounded-xl p-4 text-center">
+              <i class="fas fa-envelope text-amber-600 mr-2"></i>
+              <p class="inline text-gray-700">Need help or want to discuss a large gift? <br> Email us at <strong class="text-amber-700">info@growafricafutures.org</strong> or call <strong>+254700536808</strong></p>
+            </div>
+          </div>
+          
+          <div class="mt-8 pt-4 border-t border-gray-200 text-sm text-gray-500">
+            <i class="fas fa-receipt"></i> After donating, kindly email your name and transaction details to receive an official receipt and thank-you letter.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple Contact CTA (optional, but shows support) -->
+    <section class="py-12 bg-white reveal">
+      <div class="container mx-auto px-6 text-center max-w-2xl">
+        <i class="fas fa-quote-right text-3xl text-amber-400 mb-3"></i>
+        <p class="text-gray-700">Every contribution – small or large – creates a ripple of opportunity. Thank you for believing in Africa’s agricultural future.</p>
+        <div class="mt-6">
+          <a href="index.html#contact" class="text-amber-700 font-semibold border-b border-amber-300 hover:border-amber-700">Contact us for partnership inquiries →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER (same as main site) ==================== -->
+  <footer class="bg-gray-800 text-gray-300 border-t border-gray-700">
+    <div class="container mx-auto px-6 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="./images/logo.png" alt="Grow Africa Futures" class="h-10 w-auto" onerror="this.src='https://placehold.co/200x200?text=GAF'">
+            <span class="font-bold text-xl text-white">Grow Africa<span class="text-amber-400"> Futures</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Empowering communities through sustainable agriculture, innovation, and inclusive economic growth.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-amber-400 transition">About Us</a></li>
+            <li><a href="index.html#focus" class="hover:text-amber-400 transition">Our Focus</a></li>
+            <li><a href="team.html" class="hover:text-amber-400 transition">Team</a></li>
+            <li><a href="donate.html" class="hover:text-amber-400 transition">Donate</a></li>
+            <li><a href="index.html#contact" class="hover:text-amber-400 transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Get In Touch</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-amber-400 mt-1"></i> P.O Box 67509, 00200, Nairobi, Kenya</li>
+            <li class="flex items-center gap-3"><i class="fas fa-phone-alt text-amber-400"></i> +254700536808</li>
+            <li class="flex items-center gap-3"><i class="fas fa-envelope text-amber-400"></i> info@growafricafutures.org</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Follow Us</h4>
+          <div class="flex gap-4 mb-5">
+            <a href="#" class="bg-gray-700 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="bg-gray-700 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="bg-gray-700 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="bg-gray-700 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-facebook-f"></i></a>
+          </div>
+          <p class="text-sm text-gray-400">Join our mission — partner with us to transform African agriculture.</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+        © 2025 Grow Africa Futures — Cultivating Prosperity, Growing Futures. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Smooth scroll for donate button (optional, but works)
+    document.querySelector('a[href="#donation-instructions"]')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('#donation-instructions').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>About Us | Grow Africa Futures</title>
+  <meta name="description" content="Grow Africa Futures is a registered NGO transforming rural Africa through agribusiness, youth empowerment, and sustainable agriculture. Learn about our mission, impact, and governance.">
+  <!-- Tailwind CSS + Font Awesome + Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body { background-color: #fefcf5; overflow-x: hidden; }
+    .hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .hover-lift:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15); }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .btn-donate { background: #e67e22; transition: all 0.2s; }
+    .btn-donate:hover { background: #d35400; transform: scale(1.05); box-shadow: 0 4px 12px rgba(230, 126, 34, 0.4); }
+    .stat-number { font-size: 2.5rem; font-weight: 800; color: #2b6e3c; }
+    @media (min-width: 768px) { .stat-number { font-size: 3rem; } }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- ==================== NAVBAR (identical to homepage) ==================== -->
+  <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <div class="container mx-auto px-5 lg:px-8 py-3 flex flex-wrap items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="./images/logo.png" alt="Grow Africa Futures Logo" class="h-12 w-auto object-contain" onerror="this.src='https://placehold.co/400x200?text=Grow+Africa+Futures'">
+        <span class="font-bold text-2xl tracking-tight text-gray-800">Grow Africa<span class="text-amber-700"> Futures</span></span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-amber-700 transition">Home</a>
+        <a href="about.html" class="text-amber-700 font-semibold">About</a>
+        <a href="index.html#focus" class="hover:text-amber-700 transition">Our Focus</a>
+        <a href="team.html" class="hover:text-amber-700 transition">Team</a>
+        <a href="index.html#contact" class="hover:text-amber-700 transition">Contact</a>
+        <a href="donate.html" class="btn-donate text-white px-5 py-2 rounded-full font-semibold shadow-md"><i class="fas fa-heart mr-2"></i>Donate</a>
+      </div>
+      <div class="flex md:hidden items-center gap-3">
+        <a href="donate.html" class="btn-donate text-white px-4 py-1.5 rounded-full text-sm font-semibold"><i class="fas fa-heart mr-1"></i>Donate</a>
+        <button id="mobile-menu-btn" class="text-2xl text-gray-700 focus:outline-none"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-5 pb-4 flex flex-col space-y-3 text-gray-700 font-medium border-t">
+      <a href="index.html" class="py-2 hover:text-amber-700">Home</a>
+      <a href="about.html" class="py-2 text-amber-700 font-semibold">About</a>
+      <a href="index.html#focus" class="py-2 hover:text-amber-700">Our Focus</a>
+      <a href="team.html" class="py-2 hover:text-amber-700">Team</a>
+      <a href="index.html#contact" class="py-2 hover:text-amber-700">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-green-900 to-green-700 text-white py-20">
+      <div class="absolute inset-0 bg-black/30"></div>
+      <div class="relative container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold animate-fade-up">About <span class="text-amber-300">Grow Africa Futures</span></h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto mt-4 opacity-95">Registered NGO transforming rural Africa through agribusiness, youth empowerment, and sustainable agriculture.</p>
+      </div>
+    </section>
+
+    <!-- Our Mission & Legal Status -->
+    <section class="py-16 bg-white reveal">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-10">
+          <span class="text-amber-600 font-semibold tracking-wide">OUR CORE PURPOSE</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Alleviate Poverty & Improve Food Security</h2>
+        </div>
+        <div class="bg-amber-50 p-8 rounded-2xl shadow-md border-l-8 border-amber-500">
+          <p class="text-gray-700 text-lg leading-relaxed">As stated in our Constitution (Clause 5.1), the main object of Grow Africa Futures is <strong class="text-amber-800">“To Alleviate Poverty and Improve Food Security”</strong> across rural Africa. We are formally registered under the <strong>Non-Governmental Organizations Co-ordination Act, 1990</strong>, with our Registered Office in Nairobi, Kenya.</p>
+        </div>
+        <div class="mt-8 grid md:grid-cols-2 gap-6 text-gray-700">
+          <div class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-600 text-xl mt-1"></i><p><strong>Legal registration:</strong> Compliant with Kenyan NGO regulations, committed to transparency and accountability.</p></div>
+          <div class="flex items-start gap-3"><i class="fas fa-hand-holding-heart text-amber-600 text-xl mt-1"></i><p><strong>Non-profit status:</strong> No income or property is distributed to members (Clause 10). All resources go directly to our mission.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specific Objects (What We Do) -->
+    <section class="py-16 bg-soft-leaf reveal">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800">What We Do</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto mt-2">Our constitution outlines clear, measurable objectives to drive real change.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+            <i class="fas fa-chalkboard-user text-4xl text-amber-600 mb-4"></i>
+            <h3 class="text-xl font-bold">Training & Capacity Building</h3>
+            <p class="text-gray-600 mt-2">Provide young farmers with sustainable farming practices and agribusiness management skills.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+            <i class="fas fa-briefcase text-4xl text-amber-600 mb-4"></i>
+            <h3 class="text-xl font-bold">Create Employment</h3>
+            <p class="text-gray-600 mt-2">Generate at least <strong>700 indirect employment opportunities per year</strong> in rural communities.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+            <i class="fas fa-chart-line text-4xl text-amber-600 mb-4"></i>
+            <h3 class="text-xl font-bold">Increase Youth Participation</h3>
+            <p class="text-gray-600 mt-2">Boost youth involvement in agricultural food systems by an average of <strong>5% annually</strong> in Kenya.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+            <i class="fas fa-handshake text-4xl text-amber-600 mb-4"></i>
+            <h3 class="text-xl font-bold">Advocacy & Partnerships</h3>
+            <p class="text-gray-600 mt-2">Engage Parliament, government bodies, and private sector to promote agricultural transformation.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+            <i class="fas fa-seedling text-4xl text-amber-600 mb-4"></i>
+            <h3 class="text-xl font-bold">Fundraising for Impact</h3>
+            <p class="text-gray-600 mt-2">Secure and utilize funds to achieve all organizational objects efficiently and ethically.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md hover-lift">
+            <i class="fas fa-globe text-4xl text-amber-600 mb-4"></i>
+            <h3 class="text-xl font-bold">Sustainable Systems</h3>
+            <p class="text-gray-600 mt-2">Promote eco-friendly practices, climate resilience, and long-term food security.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Stats (placeholder data aligned with constitution goals) -->
+    <section class="py-16 bg-white reveal">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-12">Our Progress Toward the Goals</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-6">
+            <div class="stat-number">700+</div>
+            <p class="text-gray-600 font-semibold mt-2">Indirect jobs created per year</p>
+            <p class="text-sm text-gray-500">(Constitution target: 700)</p>
+          </div>
+          <div class="p-6">
+            <div class="stat-number">5% ↑</div>
+            <p class="text-gray-600 font-semibold mt-2">Annual youth participation growth</p>
+            <p class="text-sm text-gray-500">In agricultural food systems</p>
+          </div>
+          <div class="p-6">
+            <div class="stat-number">5,000+</div>
+            <p class="text-gray-600 font-semibold mt-2">Farmers trained & supported</p>
+            <p class="text-sm text-gray-500">Since our founding in 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Governance & Transparency (from constitution) -->
+    <section class="py-16 bg-soft-leaf reveal">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-gray-800">Governance & Accountability</h2>
+          <p class="text-gray-600 mt-2">We operate with integrity, oversight, and legal compliance.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-xl shadow">
+            <i class="fas fa-users text-3xl text-amber-600 mb-3"></i>
+            <h3 class="text-xl font-bold">Board of Directors</h3>
+            <p class="text-gray-600 mt-2">Minimum 5, maximum 9 members including Chairperson, Secretary, and Treasurer. Elected for 3-year terms (renewable once, max 6 years).</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow">
+            <i class="fas fa-balance-scale text-3xl text-amber-600 mb-3"></i>
+            <h3 class="text-xl font-bold">Annual General Meeting</h3>
+            <p class="text-gray-600 mt-2">Held every year with 30 days' notice. Members vote on key decisions, elect leadership, and approve audited financials.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow">
+            <i class="fas fa-file-invoice-dollar text-3xl text-amber-600 mb-3"></i>
+            <h3 class="text-xl font-bold">Audited Accounts</h3>
+            <p class="text-gray-600 mt-2">Independent registered auditor appointed at each AGM. Financial records open for inspection by members and regulators.</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow">
+            <i class="fas fa-handshake text-3xl text-amber-600 mb-3"></i>
+            <h3 class="text-xl font-bold">No Personal Gain</h3>
+            <p class="text-gray-600 mt-2">Directors and members receive no remuneration except reimbursement of expenses. Surplus assets on dissolution go to similar non-profit organizations (Clause 19).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Support Us (for donors) -->
+    <section class="py-16 bg-white reveal">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="bg-gradient-to-r from-amber-50 to-green-50 rounded-2xl p-8 md:p-12 shadow-lg">
+          <div class="text-center mb-8">
+            <i class="fas fa-star-of-life text-amber-600 text-4xl"></i>
+            <h2 class="text-3xl font-bold text-gray-800 mt-3">Why Partner With Us?</h2>
+            <p class="text-gray-700 max-w-2xl mx-auto mt-2">Your support directly enables measurable, sustainable change in African agriculture.</p>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <i class="fas fa-chart-simple text-3xl text-green-700"></i>
+              <h3 class="font-bold mt-2">Impact-Driven</h3>
+              <p class="text-sm text-gray-600">Every program targets poverty reduction and food security with clear KPIs.</p>
+            </div>
+            <div class="text-center">
+              <i class="fas fa-file-contract text-3xl text-green-700"></i>
+              <h3 class="font-bold mt-2">Legally Compliant</h3>
+              <p class="text-sm text-gray-600">Registered under Kenyan NGO Act, audited annually, fully transparent.</p>
+            </div>
+            <div class="text-center">
+              <i class="fas fa-leaf text-3xl text-green-700"></i>
+              <h3 class="font-bold mt-2">Sustainable Future</h3>
+              <p class="text-sm text-gray-600">We build self-reliant agribusinesses, not dependency.</p>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <a href="donate.html" class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition shadow-lg"><i class="fas fa-heart mr-2"></i>Make a Donation</a>
+            <a href="#contact" class="inline-block ml-4 border border-amber-600 text-amber-700 hover:bg-amber-50 font-semibold py-3 px-8 rounded-full transition">Become a Partner</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founding Signatories (from constitution extract) -->
+    <section class="py-16 bg-soft-leaf reveal">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6">Our Founding Leadership</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto mb-8">The constitution was adopted by visionary professionals committed to rural transformation.</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-sm">
+          <div class="bg-white p-3 rounded-lg shadow"><span class="font-bold">Dr. Scolastica Wambua</span><br>Board Member</div>
+          <div class="bg-white p-3 rounded-lg shadow"><span class="font-bold">Prof. Josphert Kimatu</span><br>Board Member</div>
+          <div class="bg-white p-3 rounded-lg shadow"><span class="font-bold">Angela Edward</span><br>Secretary</div>
+          <div class="bg-white p-3 rounded-lg shadow"><span class="font-bold">Benard Minyonga</span><br>Chairperson</div>
+          <div class="bg-white p-3 rounded-lg shadow"><span class="font-bold">Fredrick Wambua</span><br>Vice Chair</div>
+          <div class="bg-white p-3 rounded-lg shadow"><span class="font-bold">Dr. Atei Kerochi</span><br>Board Member</div>
+          <div class="bg-white p-3 rounded-lg shadow"><span class="font-bold">Benjamin Ombasa</span><br>Treasurer</div>
+        </div>
+        <p class="text-xs text-gray-500 mt-6">Full constitution available for inspection at our registered office.</p>
+      </div>
+    </section>
+
+    <!-- Call to Action for Youth -->
+    <section class="py-16 bg-green-800 text-white">
+      <div class="container mx-auto px-6 text-center">
+        <i class="fas fa-graduation-cap text-5xl text-amber-300 mb-4"></i>
+        <h2 class="text-3xl font-bold">Join the Movement</h2>
+        <p class="text-lg max-w-2xl mx-auto mt-2 opacity-95">Are you a young agripreneur ready to transform your future? Grow Africa Futures provides training, mentorship, and market access.</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a href="index.html#contact" class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-8 rounded-full transition">Get Involved</a>
+          <a href="team.html" class="border-2 border-white hover:bg-white hover:text-green-800 text-white font-semibold py-3 px-8 rounded-full transition">Meet Our Experts</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (simplified, linked to main contact) -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
+        <div class="reveal">
+          <h2 class="text-3xl font-bold">Talk to us.</h2>
+          <p class="text-gray-300 mt-2 mb-6">Have a question, idea, or partnership in mind? We’d love to hear from you.</p>
+          <div class="space-y-5">
+            <div class="flex items-center gap-4"><i class="fas fa-phone-alt text-amber-400 text-2xl"></i><div><p class="font-semibold">Phone</p><p>+254700536808</p></div></div>
+            <div class="flex items-center gap-4"><i class="fas fa-envelope text-amber-400 text-2xl"></i><div><p class="font-semibold">Email</p><p>info@growafricafutures.org</p></div></div>
+            <div class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-amber-400 text-2xl"></i><div><p class="font-semibold">Address</p><p>P.O Box 67509, 00200, Nairobi, Kenya</p></div></div>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl reveal delay-100">
+          <h3 class="text-2xl font-semibold mb-4">Send us a message</h3>
+          <form id="contactForm" class="space-y-4">
+            <input type="text" placeholder="Full Name" class="w-full p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 border border-gray-500 focus:outline-none focus:border-amber-400">
+            <input type="email" placeholder="Email Address" class="w-full p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 border border-gray-500 focus:outline-none">
+            <textarea rows="4" placeholder="Comment or Message" class="w-full p-3 rounded-lg bg-white/20 text-white placeholder-gray-300 border border-gray-500"></textarea>
+            <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition w-full">Submit Message</button>
+          </form>
+          <p id="form-feedback" class="text-sm mt-2 text-green-300 hidden"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-gray-800 text-gray-300 border-t border-gray-700">
+    <div class="container mx-auto px-6 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="./images/logo.png" alt="Grow Africa Futures" class="h-10 w-auto" onerror="this.src='https://placehold.co/200x200?text=GAF'">
+            <span class="font-bold text-xl text-white">Grow Africa<span class="text-amber-400"> Futures</span></span>
+          </div>
+          <p class="text-sm text-gray-400 leading-relaxed">Empowering communities through sustainable agriculture, innovation, and inclusive economic growth.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-amber-400 transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-amber-400 transition">About Us</a></li>
+            <li><a href="index.html#focus" class="hover:text-amber-400 transition">Our Focus</a></li>
+            <li><a href="team.html" class="hover:text-amber-400 transition">Team</a></li>
+            <li><a href="donate.html" class="hover:text-amber-400 transition">Donate</a></li>
+            <li><a href="index.html#contact" class="hover:text-amber-400 transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Get In Touch</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-amber-400 mt-1"></i> P.O Box 67509, 00200, Nairobi, Kenya</li>
+            <li class="flex items-center gap-3"><i class="fas fa-phone-alt text-amber-400"></i> +254700536808</li>
+            <li class="flex items-center gap-3"><i class="fas fa-envelope text-amber-400"></i> info@growafricafutures.org</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-4">Follow Us</h4>
+          <div class="flex gap-4 mb-5">
+            <a href="#" class="bg-gray-700 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="bg-gray-700 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="bg-gray-700 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="bg-gray-700 hover:bg-amber-500 text-gray-300 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition"><i class="fab fa-facebook-f"></i></a>
+          </div>
+          <p class="text-sm text-gray-400">Join our mission — partner with us to transform African agriculture.</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
+        © 2025 Grow Africa Futures — Cultivating Prosperity, Growing Futures. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Contact form handler
+    const form = document.getElementById('contactForm');
+    const feedback = document.getElementById('form-feedback');
+    if(form) form.addEventListener('submit', (e) => { e.preventDefault(); feedback.textContent = "Thank you! Your message has been received."; feedback.classList.remove('hidden'); form.reset(); setTimeout(() => feedback.classList.add('hidden'), 4000); });
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
