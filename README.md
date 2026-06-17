@@ -125,16 +125,7 @@ Tailwind CSS breakpoints ensure optimal layout, typography, and touch interactio
 
 ## 🔧 Customisation Tips
 
-### Changing the Admin Password
-- In `admin/login.php`, locate the password check:
-  ```php
-  $admin_password = 'GrowAfrica2025'; // Change this to your own password
-  ```
-- Or, if using the database method (recommended), update the `password_hash` in the `admin_users` table using a bcrypt generator.
 
-### Changing the Logo
-- Replace `images/logo.png` with your own file (keep the same filename for consistency).
-- Update fallback text in `<img>` tags if needed.
 
 ### Modifying Colours
 - The primary brand colour is Amber (`#d97706` / `#f59e0b`).
